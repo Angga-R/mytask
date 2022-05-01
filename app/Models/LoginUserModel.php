@@ -10,6 +10,6 @@ class LoginUserModel extends Model
     protected $primaryKey = 'id';
     protected $returnType = 'object';
     protected $useTimestamps = true;
-    protected $allowedFields = ['id', 'username', 'name', 'gender', 'password', 'pertanyaan_keamanan', 'jawaban_keamanan', 'created_at', 'updated_at']; // ini untuk memberitahukan data apa saja yang boleh diisi
+    protected $allowedFields = ['id', 'username', 'name', 'gender', 'user', 'password', 'pertanyaan_keamanan', 'jawaban_keamanan', 'created_at', 'updated_at']; // ini untuk memberitahukan data apa saja yang boleh diisi
 
 }

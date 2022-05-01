@@ -20,7 +20,7 @@ class RencanaPengembangan extends BaseController {
     public function index() {
 
         if (!session()->has('logged_admin')) {
-            return redirect()->to('/login');
+            return redirect()->to('/');
         }
 
         $data = [
@@ -38,7 +38,7 @@ class RencanaPengembangan extends BaseController {
     public function tambah_rencana() {
 
         if (!session()->has('logged_admin')) {
-            return redirect()->to('/login');
+            return redirect()->to('/');
         }
 
         if(!$this->validate([

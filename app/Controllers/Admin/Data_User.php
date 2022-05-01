@@ -20,7 +20,7 @@ class Data_User extends BaseController {
     public function index() {
 
         if (!session()->has('logged_admin')) {
-            return redirect()->to('/login');
+            return redirect()->to('/');
         }
 
         $data = [
@@ -37,7 +37,7 @@ class Data_User extends BaseController {
     public function hapus_user($id) {
 
         if (!session()->has('logged_admin')) {
-            return redirect()->to('/login');
+            return redirect()->to('/');
         }
 
         $this->user->delete($id);

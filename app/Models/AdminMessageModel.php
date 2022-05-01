@@ -9,7 +9,7 @@ class AdminMessageModel extends Model {
     protected $table = 'admin_message';
     protected $primaryKey = 'id';
     protected $useTimestamps = true;
-    protected $allowedFields = ['id', 'pengirim', 'nama_user', 'message', 'balasan', 'created_at', 'updated_at']; // ini untuk memberitahukan data apa saja yang boleh diisi
+    protected $allowedFields = ['id', 'pengirim', 'nama_user', 'message', 'balasan', 'dibaca', 'created_at', 'updated_at']; // ini untuk memberitahukan data apa saja yang boleh diisi
 
 }
 

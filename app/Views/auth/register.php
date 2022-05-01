@@ -117,7 +117,7 @@
                                 </form>
                                 <hr>
                                 <div class="text-center">
-                                    Sudah Memiliki akun? <a class="font-weight-bold" href="/login">Login</a>
+                                    Sudah Memiliki akun? <a class="font-weight-bold" href="/">Login</a>
                                 </div>
                                 <div class="text-center">
                                 </div>

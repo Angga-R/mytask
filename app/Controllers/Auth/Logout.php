@@ -10,7 +10,7 @@ class Logout extends BaseController {
         session()->destroy();
         setcookie('admin', '', 0, '');
         setcookie('user', '', 0, '');
-        return redirect()->to('/login');
+        return redirect()->to('/');
 
     }
 

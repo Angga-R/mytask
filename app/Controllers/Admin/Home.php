@@ -29,7 +29,7 @@ class Home extends BaseController {
     public function index() {
         
         if (!session()->has('logged_admin')) {
-            return redirect()->to('/login');
+            return redirect()->to('/');
         }
 
         $data = [

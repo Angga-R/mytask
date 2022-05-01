@@ -22,7 +22,7 @@ class LupaPassword extends BaseController {
         } elseif (session()->has('logged_user')) {
             return redirect()->to('/');
         } elseif (!session()->has('lupa_password')) {
-            return redirect()->to('/login');
+            return redirect()->to('/');
         }
 
         $data = [
@@ -80,7 +80,7 @@ class LupaPassword extends BaseController {
 
         session()->destroy();
 
-        echo "<script>alert('Ganti Password Berhasil');window.location='/login'</script>";
+        echo "<script>alert('Ganti Password Berhasil');window.location='/'</script>";
 
     }
 

@@ -105,6 +105,6 @@ class Register extends BaseController
             'jawaban_keamanan' => md5($this->request->getVar('jawaban_keamanan'))
         ]);
 
-        echo "<script>alert('Daftar Berhasil');window.location='/login'</script>";
+        echo "<script>alert('Daftar Berhasil');window.location='/'</script>";
     }
 }

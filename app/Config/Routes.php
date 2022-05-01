@@ -32,9 +32,16 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 
+if(!session()->has('logged_user')) {
+    //login
+    $routes->get('/', 'Auth\Login::index');
+}else{
+    // user
+    $routes->get('/', 'User\Home::index');
+}
+
 // ----- AUTH -----
-//login
-$routes->get('/login', 'Auth\Login::index');
+// login
 $routes->post('/proses_login', 'Auth\Login::proses');
 // register
 $routes->get('/register', 'Auth\Register::index');
@@ -47,7 +54,7 @@ $routes->post('/cek_pertanyaan_keamanan', 'Auth\LupaPassword::cek');
 $routes->post('/ubah_password', 'Auth\LupaPassword::ubah_password');
 
 // ----- USER -----
-$routes->get('/', 'User\Home::index');
+
 
 // ----- ADMIN -----
 // home
