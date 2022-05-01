@@ -25,7 +25,7 @@ class RencanaPengembangan extends BaseController {
 
         $data = [
             'title' => 'Rencana Pengembangan',
-            'data_admin' => $this->admin->where('nama', session()->get('nama_admin'))->first(),
+            'data_admin' => $this->admin->where('id', session()->get('id_admin'))->first(),
             'validation' => \Config\Services::validation(),
             'rencana' => $this->pengembangan->where(['status' => 'belum selesai'])->orderBy('created_at', 'desc')->findAll(),
             'rencana_end' => $this->pengembangan->where(['status' => 'selesai'])->orWhere(['status' => 'gagal'])->orderBy('tgl_selesai', 'desc')->findAll()
