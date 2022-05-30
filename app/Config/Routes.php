@@ -81,6 +81,8 @@ $routes->get('/pesan_admin', 'User\Pesan::index');
 $routes->get('/kirim_pesan', 'User\Pesan::kirim_pesan');
 $routes->get('/lihat_pesan/(:num)', 'User\Pesan::lihat_pesan/$1');
 $routes->post('/pesan/kirim', 'User\Pesan::kirim');
+// creator
+$routes->get('/creator', 'User\Creator::index');
 
 
 
