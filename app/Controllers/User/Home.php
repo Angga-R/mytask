@@ -5,18 +5,21 @@ namespace App\Controllers\User;
 use App\Controllers\BaseController;
 use App\Models\AdminMessageModel;
 use App\Models\TaskModel;
+use App\Models\CatatanModel;
 use App\Models\UserModel;
 
 class Home extends BaseController {
 
     protected $user;
     protected $task;
+    protected $catatan;
     protected $message;
 
     public function __construct()
     {
         $this->user = new UserModel();
         $this->task = new TaskModel();
+        $this->catatan = new CatatanModel();
         $this->message = new AdminMessageModel();
     }
 

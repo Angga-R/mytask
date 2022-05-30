@@ -118,8 +118,7 @@
     </div>
 
     <footer class="footer mt-5 py-4 bg-dark text-white text-center">
-        <p>Created by <a href="codelabssmkntalaga.netlify.app/" class="text-white fw-bold">Codelabs SMKN 1
-                Talaga</a>
+        <p>Created by <a href="/creator" class="text-white fw-bold">Anggara</a>
         </p>
     </footer>
 

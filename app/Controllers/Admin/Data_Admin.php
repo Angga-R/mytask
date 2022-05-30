@@ -57,7 +57,7 @@ class Data_Admin extends BaseController {
         }
 
         $this->dataAdmin->save([
-            'id' => 1,
+            'id' => session()->get('id_admin'),,
             'foto' => $namaFoto
         ]);
 

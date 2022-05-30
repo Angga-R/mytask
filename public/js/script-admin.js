@@ -1,5 +1,6 @@
 const foto = document.getElementById("foto");
 const ganti_foto = document.getElementById("ganti-foto");
+const info = document.getElementById("info");
 
 function previewImg() {
   const choose_file = document.querySelector("#choose-file");
@@ -8,6 +9,7 @@ function previewImg() {
   const file = new FileReader();
   file.readAsDataURL(choose_file.files[0]);
   file.onload = function (e) {
+    info.classList.toggle("d-none");
     foto.src = e.target.result;
   };
 }
@@ -29,6 +31,7 @@ function ganti_nama() {
   });
 
   btn_nama.addEventListener("click", function () {
+    lb_nama.classList.toggle("d-none");
     nama.classList.toggle("d-none");
     btn_nama.classList.toggle("d-none");
     form_nama.classList.toggle("d-none");
@@ -36,6 +39,7 @@ function ganti_nama() {
   });
 
   btn_close_nama.addEventListener("click", function () {
+    lb_nama.classList.toggle("d-none");
     nama.classList.toggle("d-none");
     btn_nama.classList.toggle("d-none");
     form_nama.classList.toggle("d-none");
@@ -56,6 +60,7 @@ function ganti_email() {
   });
 
   btn_email.addEventListener("click", function () {
+    lb_email.classList.toggle("d-none");
     email.classList.toggle("d-none");
     btn_email.classList.toggle("d-none");
     form_email.classList.toggle("d-none");
@@ -63,6 +68,7 @@ function ganti_email() {
   });
 
   btn_close_email.addEventListener("click", function () {
+    lb_email.classList.toggle("d-none");
     email.classList.toggle("d-none");
     btn_email.classList.toggle("d-none");
     form_email.classList.toggle("d-none");
@@ -83,6 +89,7 @@ function ganti_link() {
   });
 
   btn_link.addEventListener("click", function () {
+    lb_link.classList.toggle("d-none");
     link.classList.toggle("d-none");
     btn_link.classList.toggle("d-none");
     form_link.classList.toggle("d-none");
@@ -90,6 +97,7 @@ function ganti_link() {
   });
 
   btn_close_link.addEventListener("click", function () {
+    lb_link.classList.toggle("d-none");
     link.classList.toggle("d-none");
     btn_link.classList.toggle("d-none");
     form_link.classList.toggle("d-none");
@@ -110,6 +118,7 @@ function ganti_tentang() {
   });
 
   btn_tentang.addEventListener("click", function () {
+    lb_tentang.classList.toggle("d-none");
     tentang.classList.toggle("d-none");
     btn_tentang.classList.toggle("d-none");
     form_tentang.classList.toggle("d-none");
@@ -117,6 +126,7 @@ function ganti_tentang() {
   });
 
   btn_close_tentang.addEventListener("click", function () {
+    lb_tentang.classList.toggle("d-none");
     tentang.classList.toggle("d-none");
     btn_tentang.classList.toggle("d-none");
     form_tentang.classList.toggle("d-none");

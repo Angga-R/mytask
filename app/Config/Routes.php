@@ -54,6 +54,15 @@ $routes->post('/cek_pertanyaan_keamanan', 'Auth\LupaPassword::cek');
 $routes->post('/ubah_password', 'Auth\LupaPassword::ubah_password');
 
 // ----- USER -----
+// profil
+$routes->get('/profil', 'User\Profil::index');
+$routes->post('/ganti_foto', 'User\Profil::ganti_foto');
+$routes->post('/ganti_username', 'User\Profil::ganti_username');
+$routes->post('/ganti_nama', 'User\Profil::ganti_nama');
+$routes->post('/ganti_gender', 'User\Profil::ganti_gender');
+$routes->post('/ganti_pertanyaan_keamanan', 'User\Profil::ganti_pertanyaan_keamanan');
+$routes->post('/ganti_jawaban_keamanan', 'User\Profil::ganti_jawaban_keamanan');
+$routes->post('/ganti_password_user', 'User\Profil::ganti_password');
 
 
 // ----- ADMIN -----
