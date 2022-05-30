@@ -55,7 +55,9 @@ class Data_Admin extends BaseController {
             $image->withFile($foto)
                 ->fit(250, 250, 'center')
                 ->save('img/admin/' . $namaFoto);
-            unlink('img/admin/' . $foto_lama);
+            if($foto_lama != 'admin.jpg') {
+                unlink('img/admin/' . $foto_lama);
+            }
         }
 
         $this->dataAdmin->save([
@@ -64,7 +66,7 @@ class Data_Admin extends BaseController {
         ]);
 
         session()->setFlashdata('pesan', 'Ganti Foto Berhasil');
-        return redirect()->to('/data_admin');
+        return redirect()->to('/admin/data_admin');
 
     }
 
@@ -90,7 +92,7 @@ class Data_Admin extends BaseController {
         ]);
 
         session()->setFlashdata('pesan', 'Ganti Username Berhasil');
-        return redirect()->to('/data_admin');
+        return redirect()->to('/admin/data_admin');
 
     }
 
@@ -114,7 +116,7 @@ class Data_Admin extends BaseController {
         ]);
 
         session()->setFlashdata('pesan', 'Ganti Nama Berhasil');
-        return redirect()->to('/data_admin');
+        return redirect()->to('/admin/data_admin');
 
     }
 
@@ -126,7 +128,7 @@ class Data_Admin extends BaseController {
         ]);
 
         session()->setFlashdata('pesan', 'Ganti Email Berhasil');
-        return redirect()->to('/data_admin');
+        return redirect()->to('/admin/data_admin');
 
     }
 
@@ -138,7 +140,7 @@ class Data_Admin extends BaseController {
         ]);
 
         session()->setFlashdata('pesan', 'Ganti Link Portfolio Berhasil');
-        return redirect()->to('/data_admin');
+        return redirect()->to('/admin/data_admin');
 
     }
 
@@ -150,7 +152,7 @@ class Data_Admin extends BaseController {
         ]);
 
         session()->setFlashdata('pesan', 'Ganti Informasi Berhasil');
-        return redirect()->to('/data_admin');
+        return redirect()->to('/admin/data_admin');
 
     }
 
@@ -173,7 +175,7 @@ class Data_Admin extends BaseController {
         ]);
 
         session()->setFlashdata('pesan', 'Ganti Password Berhasil');
-        return redirect()->to('/data_admin');
+        return redirect()->to('/admin/data_admin');
 
     }
 

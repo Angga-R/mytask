@@ -58,7 +58,7 @@ class RencanaPengembangan extends BaseController {
         ]);
 
         session()->setFlashdata('pesan', 'Menambah Rencana Pengembangan Berhasil');
-        return redirect()->to('/pengembangan');
+        return redirect()->to('/admin/pengembangan');
 
     }
 
@@ -70,7 +70,7 @@ class RencanaPengembangan extends BaseController {
             'tgl_selesai' => date('Y-m-d')
         ]);
 
-        return redirect()->to('/pengembangan');
+        return redirect()->to('/admin/pengembangan');
 
     }
 
@@ -82,7 +82,7 @@ class RencanaPengembangan extends BaseController {
             'tgl_selesai' => date('Y-m-d')
         ]);
 
-        return redirect()->to('/pengembangan');
+        return redirect()->to('/admin/pengembangan');
 
     }
 

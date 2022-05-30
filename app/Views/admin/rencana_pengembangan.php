@@ -22,7 +22,7 @@
                 <?= session()->getFlashdata('pesan'); ?>
             </div>
             <?php endif; ?>
-            <form action="/tambah_rencana" method="post">
+            <form action="/admin/tambah_rencana" method="post">
                 <?= csrf_field(); ?>
                 <div class="input-group">
                     <input type="text" name="isi_rencana"
@@ -54,11 +54,11 @@
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     <h6 class="m-0 font-weight-bold text-primary"><?= $rencana['isi_rencana']; ?></h6>
                     <div>
-                        <form action="/rencana_selesai/<?= $rencana['id']; ?>" method="post" class="d-inline">
+                        <form action="/admin/rencana_selesai/<?= $rencana['id']; ?>" method="post" class="d-inline">
                             <?= csrf_field(); ?>
                             <button type="submit" class="btn btn-success">Y</button>
                         </form>
-                        <form action="/rencana_gagal/<?= $rencana['id']; ?>" method="post" class="d-inline">
+                        <form action="/admin/rencana_gagal/<?= $rencana['id']; ?>" method="post" class="d-inline">
                             <?= csrf_field(); ?>
                             <button type="submit" class="btn btn-danger">X</button>
                         </form>

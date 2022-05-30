@@ -81,7 +81,9 @@ class Profil extends BaseController {
             $image->withFile($foto)
                 ->fit(250, 250, 'center')
                 ->save('img/user/' . $namaFoto);
-            unlink('img/user/' . $foto_lama);
+            if($foto_lama != 'boy.png' && $foto_lama != 'girl.png') {
+                unlink('img/user/' . $foto_lama);
+            }
         }
 
         $this->user->save([
@@ -165,8 +167,9 @@ class Profil extends BaseController {
 
         if(!$this->validate([
             'name' => [
-                'rules' => 'max_length[20]|alpha_space',
+                'rules' => 'min_length[4]|max_length[20]|alpha_space',
                 'errors' => [
+                    'min_length' => 'Nama Terlalu Pendek!',
                     'max_length' => 'Nama Terlalu Panjang!',
                     'alpha_space' => 'Nama Tidak bisa mengandung angka atau karakter lain!'
                 ]

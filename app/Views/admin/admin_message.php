@@ -57,13 +57,13 @@
         <!-- balasan kosong -->
         <div class="col-xl-10 col-lg-4 ml-auto">
             <div class="card mb-3">
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-primary">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-warning">
                     <h6 class="m-0 font-weight-bold text-white">
                         Balas Sebagai Admin<br>
                     </h6>
                 </div>
                 <div class="card-body text-right">
-                    <form action="/kirim_balasan/<?= $pesan['id']; ?>" method="post">
+                    <form action="/admin/kirim_balasan/<?= $pesan['id']; ?>" method="post">
                         <?= csrf_field(); ?>
                         <textarea name="balasan"
                             class="form-control <?= ($validation->hasError('balasan')) ? 'is-invalid' : ''; ?> mb-2"></textarea>

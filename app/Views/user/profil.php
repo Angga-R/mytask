@@ -42,7 +42,7 @@
                         (250x250)
                     </center>
                     <div class="container text-center mt-3 d-none" id="ganti-foto">
-                        <form action="/ganti_foto" method="post" enctype="multipart/form-data">
+                        <form action="/profil/ganti_foto" method="post" enctype="multipart/form-data">
                             <?= csrf_field(); ?>
                             <input type="hidden" name="gender" value="<?= $user['gender']; ?>">
                             <input type="hidden" name="foto_lama" value="<?= $user['foto']; ?>">
@@ -61,7 +61,7 @@
                                 readonly>
                             <span class="btn ml-2" id="btn-username"><span class="fa fa-edit"></span></span>
                         </div>
-                        <form action="/ganti_username" method="post" class="d-none" id="form-username">
+                        <form action="/profil/ganti_username" method="post" class="d-none" id="form-username">
                             <?= csrf_field(); ?>
                             <div class="input-group">
                                 <label class="col-form-label mr-2" id="lb-username-2">Username : </label>
@@ -83,7 +83,7 @@
                             <input type="text" value="<?= $user['name']; ?>" class="form-control" id="nama" readonly>
                             <span class="btn ml-2" id="btn-nama"><span class="fa fa-edit"></span></span>
                         </div>
-                        <form action="/ganti_nama" method="post" class="d-none" id="form-nama">
+                        <form action="/profil/ganti_nama" method="post" class="d-none" id="form-nama">
                             <?= csrf_field(); ?>
                             <div class="input-group">
                                 <label class="col-form-label mr-2" id="lb-nama-2">Nama : </label>
@@ -103,7 +103,7 @@
                                 readonly>
                             <span class="btn ml-2" id="btn-gender"><span class="fa fa-edit"></span></span>
                         </div>
-                        <form action="/ganti_gender" method="post" class="d-none" id="form-gender">
+                        <form action="/profil/ganti_gender" method="post" class="d-none" id="form-gender">
                             <?= csrf_field(); ?>
                             <div class="input-group">
                                 <label class="col-form-label mr-2" id="lb-gender-2">Gender : </label>
@@ -126,7 +126,8 @@
                                 id="pertanyaan" readonly>
                             <span class="btn ml-2" id="btn-pertanyaan"><span class="fa fa-edit"></span></span>
                         </div>
-                        <form action="/ganti_pertanyaan_keamanan" method="post" class="d-none" id="form-pertanyaan">
+                        <form action="/profil/ganti_pertanyaan_keamanan" method="post" class="d-none"
+                            id="form-pertanyaan">
                             <?= csrf_field(); ?>
                             <div class="input-group">
                                 <label class="col-form-label mr-2" id="lb-pertanyaan-2">Pertanyaan Keamanan : </label>
@@ -154,7 +155,7 @@
                                 readonly>
                             <span class="btn ml-2" id="btn-jawaban"><span class="fa fa-edit"></span></span>
                         </div>
-                        <form action="/ganti_jawaban_keamanan" method="post" class="d-none" id="form-jawaban">
+                        <form action="/profil/ganti_jawaban_keamanan" method="post" class="d-none" id="form-jawaban">
                             <?= csrf_field(); ?>
                             <div class="input-group">
                                 <label class="col-form-label mr-2" id="lb-jawaban-2">Jawaban Keamanan : </label>
@@ -173,7 +174,7 @@
                                 readonly>
                             <span class="btn ml-2" id="btn-password"><span class="fa fa-edit"></span></span>
                         </div>
-                        <form action="ganti_password_user" method="post" class="d-none" id="form-password">
+                        <form action="/profil/ganti_password_user" method="post" class="d-none" id="form-password">
                             <?= csrf_field(); ?>
                             <div class="input-group">
                                 <label class="col-form-label mr-2" id="lb-password">Password : </label>
@@ -192,6 +193,6 @@
 
 </div>
 <!---Container Fluid-->
-<script src="js/script-user.js"></script>
+<script src="<?= base_url(); ?>/js/script-user.js"></script>
 
 <?= $this->endSection(); ?>

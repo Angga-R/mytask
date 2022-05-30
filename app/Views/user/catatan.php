@@ -82,6 +82,12 @@
 
     <?php endforeach; ?>
 
+    <?php if(count($catatan) < 1) : ?>
+    <div class="home-plus"></div>
+    <div class="home-plus" id="task-plus"></div>
+    <div class="home-plus" id="task-plus"></div>
+    <?php endif; ?>
+
 </div>
 <!---Container Fluid-->
 

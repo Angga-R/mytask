@@ -105,6 +105,10 @@ class Pesan extends BaseController {
         $user = $this->user->where('id', session()->get('id_user'))->first();
         $this_message = $this->message->where('id', $id)->first();
 
+        if($this_message['pengirim'] != $user['username']) {
+            return redirect()->back();
+        }
+
         $data = [
             'title' => 'Pesan | Lihat Pesan',
             'user' => $user,

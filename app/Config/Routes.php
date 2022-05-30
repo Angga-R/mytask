@@ -56,31 +56,31 @@ $routes->post('/ubah_password', 'Auth\LupaPassword::ubah_password');
 // ----- USER -----
 // profil
 $routes->get('/profil', 'User\Profil::index');
-$routes->post('/ganti_foto', 'User\Profil::ganti_foto');
-$routes->post('/ganti_username', 'User\Profil::ganti_username');
-$routes->post('/ganti_nama', 'User\Profil::ganti_nama');
-$routes->post('/ganti_gender', 'User\Profil::ganti_gender');
-$routes->post('/ganti_pertanyaan_keamanan', 'User\Profil::ganti_pertanyaan_keamanan');
-$routes->post('/ganti_jawaban_keamanan', 'User\Profil::ganti_jawaban_keamanan');
-$routes->post('/ganti_password_user', 'User\Profil::ganti_password');
+$routes->post('/profil/ganti_foto', 'User\Profil::ganti_foto');
+$routes->post('/profil/ganti_username', 'User\Profil::ganti_username');
+$routes->post('/profil/ganti_nama', 'User\Profil::ganti_nama');
+$routes->post('/profil/ganti_gender', 'User\Profil::ganti_gender');
+$routes->post('/profil/ganti_pertanyaan_keamanan', 'User\Profil::ganti_pertanyaan_keamanan');
+$routes->post('/profil/ganti_jawaban_keamanan', 'User\Profil::ganti_jawaban_keamanan');
+$routes->post('/profil/ganti_password_user', 'User\Profil::ganti_password');
 // catatan
 $routes->get('/catatan', 'User\Catatan::index');
 $routes->post('/catatan/buat_catatan', 'User\Catatan::add');
 $routes->delete('/catatan/hapus/(:num)', 'User\Catatan::hapus/$1');
 // task
-$routes->get('/semua_task', 'User\Task::index');
-$routes->get('/buat_task', 'User\Task::buat_task');
-$routes->get('/task_saat_ini', 'User\Task::berjalan');
-$routes->get('/riwayat_task', 'User\Task::riwayat');
+$routes->get('/task/semua_task', 'User\Task::index');
+$routes->get('/task/buat_task', 'User\Task::buat_task');
+$routes->get('/task/task_saat_ini', 'User\Task::berjalan');
+$routes->get('/task/riwayat_task', 'User\Task::riwayat');
 $routes->post('/task/buat_task', 'User\Task::new');
 $routes->post('/task/task_selesai/(:num)', 'User\Task::selesai/$1');
 $routes->post('/task/task_gagal/(:num)', 'User\Task::gagal/$1');
 $routes->delete('/task/hapus/(:num)', 'User\Task::hapus/$1');
 // message
 $routes->get('/pesan_admin', 'User\Pesan::index');
-$routes->get('/kirim_pesan', 'User\Pesan::kirim_pesan');
-$routes->get('/lihat_pesan/(:num)', 'User\Pesan::lihat_pesan/$1');
-$routes->post('/pesan/kirim', 'User\Pesan::kirim');
+$routes->get('/pesan_admin/kirim_pesan', 'User\Pesan::kirim_pesan');
+$routes->get('/pesan_admin/lihat_pesan/(:num)', 'User\Pesan::lihat_pesan/$1');
+$routes->post('/pesan_admin/kirim', 'User\Pesan::kirim');
 // creator
 $routes->get('/creator', 'User\Creator::index');
 
@@ -90,25 +90,25 @@ $routes->get('/creator', 'User\Creator::index');
 // home
 $routes->get('/admin', 'Admin\Home::index');
 // data user
-$routes->get('/data_user', 'Admin\Data_User::index');
-$routes->delete('hapus_user/(:num)', 'Admin\Data_User::hapus_user/$1');
+$routes->get('/admin/data_user', 'Admin\Data_User::index');
+$routes->delete('/admin/hapus_user/(:num)', 'Admin\Data_User::hapus_user/$1');
 // pesan dari user
-$routes->get('/admin_message', 'Admin\Message::index');
-$routes->post('/kirim_balasan/(:num)', 'Admin\Message::kirim_balasan/$1');
+$routes->get('/admin/admin_message', 'Admin\Message::index');
+$routes->post('/admin/kirim_balasan/(:num)', 'Admin\Message::kirim_balasan/$1');
 // rencana pengembangan
-$routes->get('/pengembangan', 'Admin\RencanaPengembangan::index');
-$routes->post('/tambah_rencana', 'Admin\RencanaPengembangan::tambah_rencana');
-$routes->post('/rencana_selesai/(:num)', 'Admin\RencanaPengembangan::rencana_selesai/$1');
-$routes->post('/rencana_gagal/(:num)', 'Admin\RencanaPengembangan::rencana_gagal/$1');
+$routes->get('/admin/pengembangan', 'Admin\RencanaPengembangan::index');
+$routes->post('/admin/tambah_rencana', 'Admin\RencanaPengembangan::tambah_rencana');
+$routes->post('/admin/rencana_selesai/(:num)', 'Admin\RencanaPengembangan::rencana_selesai/$1');
+$routes->post('/admin/rencana_gagal/(:num)', 'Admin\RencanaPengembangan::rencana_gagal/$1');
 // data admin
-$routes->get('/data_admin', 'Admin\Data_Admin::index');
-$routes->post('/ganti_foto_admin', 'Admin\Data_Admin::ganti_foto');
-$routes->post('/ganti_username_admin', 'Admin\Data_Admin::ganti_username');
-$routes->post('/ganti_nama_admin', 'Admin\Data_Admin::ganti_nama');
-$routes->post('/ganti_email_admin', 'Admin\Data_Admin::ganti_email');
-$routes->post('/ganti_link_admin', 'Admin\Data_Admin::ganti_link');
-$routes->post('/ganti_tentang_admin', 'Admin\Data_Admin::ganti_tentang');
-$routes->post('/ganti_password_admin', 'Admin\Data_Admin::ganti_password');
+$routes->get('/admin/data_admin', 'Admin\Data_Admin::index');
+$routes->post('/admin/ganti_foto_admin', 'Admin\Data_Admin::ganti_foto');
+$routes->post('/admin/ganti_username_admin', 'Admin\Data_Admin::ganti_username');
+$routes->post('/admin/ganti_nama_admin', 'Admin\Data_Admin::ganti_nama');
+$routes->post('/admin/ganti_email_admin', 'Admin\Data_Admin::ganti_email');
+$routes->post('/admin/ganti_link_admin', 'Admin\Data_Admin::ganti_link');
+$routes->post('/admin/ganti_tentang_admin', 'Admin\Data_Admin::ganti_tentang');
+$routes->post('/admin/ganti_password_admin', 'Admin\Data_Admin::ganti_password');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

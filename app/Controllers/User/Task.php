@@ -145,7 +145,7 @@ class Task extends BaseController {
         ]);
 
         session()->setFlashdata('pesan', 'Task berhasil dibuat');
-        return redirect()->to('/task_saat_ini');
+        return redirect()->to('/task/task_saat_ini');
 
     }
 
@@ -162,7 +162,7 @@ class Task extends BaseController {
         ]);
 
         session()->setFlashdata('pesan', 'Task telah selesai!');
-        return redirect()->to('/riwayat_task');
+        return redirect()->to('/task/riwayat_task');
 
     }
 
@@ -179,7 +179,7 @@ class Task extends BaseController {
         ]);
 
         session()->setFlashdata('pesan', '<span class="text-danger">Task telah gagal</span>');
-        return redirect()->to('/riwayat_task');
+        return redirect()->to('/task/riwayat_task');
 
     }
 
@@ -192,7 +192,7 @@ class Task extends BaseController {
         $this->task->delete($id);
 
         session()->setFlashdata('pesan', 'Task Berhasil Dihapus!');
-        return redirect()->to('/riwayat_task');
+        return redirect()->to('/task/riwayat_task');
     }
 
 }

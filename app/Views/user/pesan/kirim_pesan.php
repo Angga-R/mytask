@@ -24,7 +24,7 @@
                 </h6>
             </div>
             <div class="card-body text-right">
-                <form action="/pesan/kirim" method="post">
+                <form action="/pesan_admin/kirim" method="post">
                     <?= csrf_field(); ?>
                     <textarea name="message"
                         class="form-control <?= ($validation->hasError('message')) ? 'is-invalid' : ''; ?> mb-2"

@@ -23,8 +23,8 @@
             <div class="alert alert-success mt-3" role="alert">
                 <?= session()->getFlashdata('pesan'); ?>
             </div>
-            <?php } elseif($validation->hasError('foto') || $validation->hasError('nama') || $validation->hasError('email') || $validation->hasError('link') || $validation->hasError('tentang') || $validation->hasError('password')) { ?>
-            <?php $validasi = $validation->getErrors(['foto', 'nama', 'email', 'link', 'tentang', 'password']); ?>
+            <?php } elseif($validation->hasError('foto') || $validation->hasError('username') || $validation->hasError('nama') || $validation->hasError('email') || $validation->hasError('link') || $validation->hasError('tentang') || $validation->hasError('password')) { ?>
+            <?php $validasi = $validation->getErrors(['foto', 'username', 'nama', 'email', 'link', 'tentang', 'password']); ?>
             <div class="alert alert-danger mt-3" role="alert">
                 <?php foreach($validasi as $v) { echo $v; } ?>
             </div>
@@ -33,8 +33,8 @@
                 <!-- Foto -->
                 <div class="card-header py-3 d-block">
                     <div class="container mx-auto text-center">
-                        <img src="img/admin/<?= $data_admin['foto'] ?>" class="rounded-circle" width="250" height="250"
-                            id="foto">
+                        <img src="<?= base_url(); ?>/img/admin/<?= $data_admin['foto'] ?>" class="rounded-circle"
+                            width="250" height="250" id="foto">
                     </div>
                     <center class="mt-2 text-info d-none" id="info">*ini bukan preview asli, ukuran gambar akan otomatis
                         di potong bagian tengah
@@ -43,7 +43,7 @@
                         (250x250)
                     </center>
                     <div class="container text-center mt-3 d-none" id="ganti-foto">
-                        <form action="/ganti_foto_admin" method="post" enctype="multipart/form-data">
+                        <form action="/admin/ganti_foto_admin" method="post" enctype="multipart/form-data">
                             <?= csrf_field(); ?>
                             <input type="hidden" name="foto_lama" value="<?= $data_admin['foto'] ?>">
                             <input type="file" name="foto" class="form-control" id="choose-file"
@@ -61,7 +61,7 @@
                                 id="username" readonly>
                             <span class="btn ml-2" id="btn-username"><span class="fa fa-edit"></span></span>
                         </div>
-                        <form action="/ganti_username_admin" method="post" class="d-none" id="form-username">
+                        <form action="/admin/ganti_username_admin" method="post" class="d-none" id="form-username">
                             <?= csrf_field(); ?>
                             <div class="input-group">
                                 <label class="col-form-label mr-2" id="lb-username-2">Username : </label>
@@ -83,7 +83,7 @@
                                 readonly>
                             <span class="btn ml-2" id="btn-nama"><span class="fa fa-edit"></span></span>
                         </div>
-                        <form action="/ganti_nama_admin" method="post" class="d-none" id="form-nama">
+                        <form action="/admin/ganti_nama_admin" method="post" class="d-none" id="form-nama">
                             <?= csrf_field(); ?>
                             <div class="input-group">
                                 <label class="col-form-label mr-2" id="lb-nama-2">Nama : </label>
@@ -102,7 +102,7 @@
                                 readonly>
                             <span class="btn ml-2" id="btn-email"><span class="fa fa-edit"></span></span>
                         </div>
-                        <form action="/ganti_email_admin" method="post" class="d-none" id="form-email">
+                        <form action="/admin/ganti_email_admin" method="post" class="d-none" id="form-email">
                             <?= csrf_field(); ?>
                             <div class="input-group">
                                 <label class="col-form-label mr-2" id="lb-email-2">Email : </label>
@@ -121,7 +121,7 @@
                                 id="link" readonly>
                             <span class="btn ml-2" id="btn-link"><span class="fa fa-edit"></span></span>
                         </div>
-                        <form action="ganti_link_admin" method="post" class="d-none" id="form-link">
+                        <form action="/admin/ganti_link_admin" method="post" class="d-none" id="form-link">
                             <?= csrf_field(); ?>
                             <div class="input-group">
                                 <label class="col-form-label mr-2" id="lb-link-2">Link Portfolio : </label>
@@ -141,7 +141,7 @@
                             </div>
                             <span class="btn ml-2" id="btn-tentang"><span class="fa fa-edit"></span></span>
                         </div>
-                        <form action="/ganti_tentang_admin" method="post" class="d-none" id="form-tentang">
+                        <form action="/admin/ganti_tentang_admin" method="post" class="d-none" id="form-tentang">
                             <?= csrf_field(); ?>
                             <div class="input-group">
                                 <label class="col-form-label mr-2" id="lb-tentang-2">Tentang : </label>
@@ -156,7 +156,7 @@
                     <span class="card text-center d-none" id="2">?</span>
                     <!-- Ganti Password -->
                     <div class="card py-2 px-2 border border-secondary mb-2 d-none" id="ganti-password">
-                        <form action="ganti_password_admin" method="post">
+                        <form action="/admin/ganti_password_admin" method="post">
                             <?= csrf_field(); ?>
                             <div class="input-group">
                                 <label class="col-form-label mr-2">Password : </label>
@@ -175,6 +175,6 @@
 
 </div>
 <!---Container Fluid-->
-<script src="js/script-admin.js"></script>
+<script src="<?= base_url(); ?>/js/script-admin.js"></script>
 
 <?= $this->endSection(); ?>

@@ -22,7 +22,8 @@
                         MyTask!</h6>
                 </div>
                 <div class="card-body">
-                    Aplikasi ini dibuat untuk menyimpan task / apa saja yang bisa kamu tulis disini.
+                    Aplikasi ini dibuat untuk menyimpan tugas, catatan, impian, tujuan, dan apa saja bebas yang ingin
+                    kamu tulis dan simpan disini.
                 </div>
             </div>
         </div>

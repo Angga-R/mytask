@@ -35,13 +35,13 @@
                 Menu
             </div>
             <li class="nav-item">
-                <a class="nav-link" href="/data_user">
+                <a class="nav-link" href="/admin/data_user">
                     <i class="fas fa-users"></i>
                     <span>Data User</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/admin_message">
+                <a class="nav-link" href="/admin/admin_message">
                     <i class="fas fa-envelope"></i>
                     <span>Pesan Dari User</span>
                 </a>
@@ -51,13 +51,13 @@
                 Fitur Admin
             </div>
             <li class="nav-item">
-                <a class="nav-link" href="/pengembangan">
+                <a class="nav-link" href="/admin/pengembangan">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Rencana Pengembangan</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/data_admin">
+                <a class="nav-link" href="/admin/data_admin">
                     <i class="fas fa-user"></i>
                     <span>Data Admin</span>
                 </a>

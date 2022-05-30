@@ -53,7 +53,7 @@ class Message extends BaseController {
             'dibaca' => 'false'
         ]);
 
-        return redirect()->to('/admin_message');
+        return redirect()->to('/admin/admin_message');
 
     }
 

@@ -61,7 +61,7 @@
                                 <td><?= count($task->where('user', $user['username'])->findAll()); ?></td>
                                 <td><?= count($catatan->where('user', $user['username'])->findAll()); ?></td>
                                 <td>
-                                    <form action="/hapus_user/<?= $user['id']; ?>" method="post" class="d-inline">
+                                    <form action="/admin/hapus_user/<?= $user['id']; ?>" method="post" class="d-inline">
                                         <?= csrf_field(); ?>
                                         <input type="hidden" name="_method" value="DELETE">
                                         <button type="submit" class="btn btn-danger btn-md"

@@ -50,7 +50,7 @@ class Data_User extends BaseController {
 
         $this->user->delete($id);
         session()->setFlashdata('pesan', 'Data Berhasil Dihapus');
-        return redirect()->to('/data_user');
+        return redirect()->to('/admin/data_user');
     }
 
 }
