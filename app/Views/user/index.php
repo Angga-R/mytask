@@ -38,7 +38,7 @@
                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?= count($task); ?></div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-calendar fa-2x text-primary"></i>
+                            <i class="fas fa-tasks fa-2x text-primary"></i>
                         </div>
                     </div>
                 </div>
@@ -67,7 +67,11 @@
                     <div class="row align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-uppercase mb-1">Task Diselesaikan</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= count($task_selesai); ?></div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                <span class="text-success"><?= count($task_selesai); ?></span>
+                                +
+                                <span class="text-danger"><?= count($task_gagal); ?></span>
+                            </div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-check fa-2x text-success"></i>
@@ -82,11 +86,11 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-uppercase mb-1">Task Gagal</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= count($task_gagal); ?></div>
+                            <div class="text-xs font-weight-bold text-uppercase mb-1">Catatan Dibuat</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= count($catatan); ?></div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-calendar fa-2x text-danger"></i>
+                            <i class="fas fa-calendar fa-2x text-info"></i>
                         </div>
                     </div>
                 </div>

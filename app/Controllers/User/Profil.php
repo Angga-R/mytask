@@ -48,6 +48,10 @@ class Profil extends BaseController {
     }
 
     public function ganti_foto() {
+
+        if(!session()->has('logged_user')) {
+            return redirect()->to('/');
+        }
         
         if(!$this->validate([
             'foto' => [
@@ -64,6 +68,7 @@ class Profil extends BaseController {
 
         $image = \Config\Services::image();
         $foto = $this->request->getFile('foto');
+        $foto_lama = $this->request->getVar('foto_lama');
         $gender = $this->request->getVar('gender');
         if($foto->getError() == 4) {
             if($gender == 'Laki-laki') {
@@ -76,6 +81,7 @@ class Profil extends BaseController {
             $image->withFile($foto)
                 ->fit(250, 250, 'center')
                 ->save('img/user/' . $namaFoto);
+            unlink('img/user/' . $foto_lama);
         }
 
         $this->user->save([
@@ -89,6 +95,11 @@ class Profil extends BaseController {
     }
 
     public function ganti_username() {
+
+        if(!session()->has('logged_user')) {
+            return redirect()->to('/');
+        }
+
         if(!$this->validate([
             'username' => [
                 'rules' => 'alpha_dash|min_length[5]',
@@ -105,9 +116,11 @@ class Profil extends BaseController {
         $username_lama = $this->request->getVar('username_lama');
         $username = '@' . strtolower($this->request->getVar('username'));
         $cek_username = $this->user->where(['username' => $username])->first();
-        if($cek_username != null) {
-            $this->validator->setError('username', 'Username Sudah Digunakan!');
-            return redirect()->back()->withInput();
+        if($username != $username_lama) {
+            if($cek_username != null) {
+                $this->validator->setError('username', 'Username Sudah Digunakan!');
+                return redirect()->back()->withInput();
+            }
         }
 
         $this->user->save([
@@ -146,6 +159,10 @@ class Profil extends BaseController {
 
     public function ganti_nama() {
 
+        if(!session()->has('logged_user')) {
+            return redirect()->to('/');
+        }
+
         if(!$this->validate([
             'name' => [
                 'rules' => 'max_length[20]|alpha_space',
@@ -182,6 +199,10 @@ class Profil extends BaseController {
 
     public function ganti_gender() {
 
+        if(!session()->has('logged_user')) {
+            return redirect()->to('/');
+        }
+
         $this->user->save([
             'id' => session()->get('id_user'),
             'gender' => $this->request->getVar('gender')
@@ -194,6 +215,10 @@ class Profil extends BaseController {
 
     public function ganti_pertanyaan_keamanan() {
 
+        if(!session()->has('logged_user')) {
+            return redirect()->to('/');
+        }
+
         $this->user->save([
             'id' => session()->get('id_user'),
             'pertanyaan_keamanan' => $this->request->getVar('pertanyaan_keamanan')
@@ -205,6 +230,10 @@ class Profil extends BaseController {
     }
 
     public function ganti_jawaban_keamanan() {
+
+        if(!session()->has('logged_user')) {
+            return redirect()->to('/');
+        }
 
         if(!$this->validate([
             'jawaban_keamanan' => [
@@ -228,6 +257,10 @@ class Profil extends BaseController {
     }
 
     public function ganti_password() {
+
+        if(!session()->has('logged_user')) {
+            return redirect()->to('/');
+        }
 
         if(!$this->validate([
             'password' => [

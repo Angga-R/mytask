@@ -19,8 +19,8 @@
 <body id="page-top">
 
     <!-- TopBar -->
-    <nav class="navbar navbar-expand navbar-light bg-danger topbar static-top" id="nav-top-user">
-        <span class="ml-2"><img src="<?= base_url(); ?>/img/logo/MyTask.svg"></span>
+    <nav class="navbar navbar-expand navbar-light topbar static-top" id="nav-top-user">
+        <a href="/"><span class="ml-2"><img src="<?= base_url(); ?>/img/logo/MyTask.svg"></span></a>
     </nav>
     <!-- Topbar -->
 
@@ -29,7 +29,8 @@
             <div id="content">
                 <!-- TopBar -->
                 <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
-                    <span class="ml-2" id="logo-mytask-bot"><img src="<?= base_url(); ?>/img/logo/MyTask.svg"></span>
+                    <a href="/"><span class="ml-2" id="logo-mytask-bot"><img
+                                src="<?= base_url(); ?>/img/logo/MyTask.svg"></span></a>
                     <ul class="navbar-nav" id="ul-bot-user">
                         <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
@@ -89,13 +90,19 @@
                                     Task</a>
                             </div>
                         </li>
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link" href="/catatan">
+                                <i class="fas fa-calendar"></i>
+                            </a>
+                        </li>
                         <div class="topbar-divider d-sm-block"></div>
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <img class="img-profile rounded-circle" src="img/user/<?= $user['foto']; ?>"
                                     style="max-width: 60px">
-                                <span class="ml-2 d-lg-inline text-white small"><?= $user['name']; ?></span>
+                                <span
+                                    class="ml-2 d-lg-inline text-white small"><?= substr($user['name'], 0, 7); ?></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
@@ -103,7 +110,7 @@
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profil
                                 </a>
-                                <a class="dropdown-item" href="/logout">
+                                <a class="dropdown-item" onclick="return confirm('Anda akan logout?');" href="/logout">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>

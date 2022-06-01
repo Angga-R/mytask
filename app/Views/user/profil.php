@@ -6,7 +6,7 @@
 <div class="container-fluid" id="container-wrapper">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">
-            Profil Anda
+            Profil Saya
         </h1>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/">Home</a></li>
@@ -45,14 +45,15 @@
                         <form action="/ganti_foto" method="post" enctype="multipart/form-data">
                             <?= csrf_field(); ?>
                             <input type="hidden" name="gender" value="<?= $user['gender']; ?>">
+                            <input type="hidden" name="foto_lama" value="<?= $user['foto']; ?>">
                             <input type="file" name="foto" class="form-control" id="choose-file"
                                 onchange="previewImg()">
                             <button type="submit" class="btn btn-success btn-sm mt-2">Ganti Foto</button>
                         </form>
                     </div>
                 </div>
-                <!-- Username -->
                 <div class="card-body">
+                    <!-- Username -->
                     <div class="card py-2 px-2 border border-secondary mb-2">
                         <div class="input-group">
                             <label class="col-form-label mr-2" id="lb-username">Username : </label>

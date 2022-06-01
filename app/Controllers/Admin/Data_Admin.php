@@ -47,6 +47,7 @@ class Data_Admin extends BaseController {
 
         $image = \Config\Services::image();
         $foto = $this->request->getFile('foto');
+        $foto_lama = $this->request->getVar('foto_lama');
         if($foto->getError() == 4) {
             $namaFoto = 'admin.jpg';
         } else {
@@ -54,14 +55,41 @@ class Data_Admin extends BaseController {
             $image->withFile($foto)
                 ->fit(250, 250, 'center')
                 ->save('img/admin/' . $namaFoto);
+            unlink('img/admin/' . $foto_lama);
         }
 
         $this->dataAdmin->save([
-            'id' => session()->get('id_admin'),,
+            'id' => session()->get('id_admin'),
             'foto' => $namaFoto
         ]);
 
         session()->setFlashdata('pesan', 'Ganti Foto Berhasil');
+        return redirect()->to('/data_admin');
+
+    }
+
+    public function ganti_username() {
+        if(!$this->validate([
+            'username' => [
+                'rules' => 'alpha_dash|min_length[5]',
+                'errors' => [
+                    'alpha_dash' => 'tidak boleh mengandung spasi / selain karakter strip(-),slash(_)',
+                    'min_length' => 'Username telalu pendek!'
+                ]
+            ]
+        ])){
+            return redirect()->back()->withInput();
+        }
+
+        // validasi username
+        $username = '@' . strtolower($this->request->getVar('username'));
+
+        $this->dataAdmin->save([
+            'id' => session()->get('id_admin'),
+            'username' => $username,
+        ]);
+
+        session()->setFlashdata('pesan', 'Ganti Username Berhasil');
         return redirect()->to('/data_admin');
 
     }

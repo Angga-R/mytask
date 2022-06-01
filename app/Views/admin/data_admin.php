@@ -45,14 +45,37 @@
                     <div class="container text-center mt-3 d-none" id="ganti-foto">
                         <form action="/ganti_foto_admin" method="post" enctype="multipart/form-data">
                             <?= csrf_field(); ?>
+                            <input type="hidden" name="foto_lama" value="<?= $data_admin['foto'] ?>">
                             <input type="file" name="foto" class="form-control" id="choose-file"
                                 onchange="previewImg()">
                             <button type="submit" class="btn btn-success btn-sm mt-2">Ganti Foto</button>
                         </form>
                     </div>
                 </div>
-                <!-- Nama -->
                 <div class="card-body">
+                    <!-- Username -->
+                    <div class="card py-2 px-2 border border-secondary mb-2">
+                        <div class="input-group">
+                            <label class="col-form-label mr-2" id="lb-username">Username : </label>
+                            <input type="text" value="<?= $data_admin['username']; ?>" class="form-control"
+                                id="username" readonly>
+                            <span class="btn ml-2" id="btn-username"><span class="fa fa-edit"></span></span>
+                        </div>
+                        <form action="/ganti_username_admin" method="post" class="d-none" id="form-username">
+                            <?= csrf_field(); ?>
+                            <div class="input-group">
+                                <label class="col-form-label mr-2" id="lb-username-2">Username : </label>
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">@</span>
+                                </div>
+                                <input type="text" class="form-control" name="username"
+                                    value="<?= substr($data_admin['username'], 1); ?>" autocomplete="off" required>
+                                <button type="submit" class="btn" hidden></button>
+                                <span class="btn ml-2 d-none close" id="btn-close-username">x</span>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Nama -->
                     <div class="card py-2 px-2 border border-secondary mb-2">
                         <div class="input-group">
                             <label class="col-form-label mr-2" id="lb-nama">Nama : </label>
@@ -125,7 +148,7 @@
                                 <textarea class="form-control" rows="5" name="tentang" autocomplete="off" required>
                                     <?= $data_admin['tentang']; ?>
                                 </textarea>
-                                <button type="submit" class="btn btn-success mt-1">Save</button>
+                                <button type="submit" class="btn btn-success ml-2">Save</button>
                                 <span class="btn ml-2 d-none close" id="btn-close-tentang">x</span>
                             </div>
                         </form>

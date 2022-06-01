@@ -51,7 +51,23 @@
                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?= count($task); ?></div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-calendar fa-2x text-primary"></i>
+                            <i class="fas fa-tasks fa-2x text-primary"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Catatan Semua User -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-uppercase mb-1">Catatan Semua User</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= count($catatan); ?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar fa-2x text-secondary"></i>
                         </div>
                     </div>
                 </div>

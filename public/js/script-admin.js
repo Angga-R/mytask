@@ -18,6 +18,35 @@ foto.addEventListener("click", function () {
   ganti_foto.classList.toggle("d-none");
 });
 
+function ganti_username() {
+  const lb_username = document.getElementById("lb-username");
+  const username = document.getElementById("username");
+  const btn_username = document.getElementById("btn-username");
+  const form_username = document.getElementById("form-username");
+  const btn_close_username = document.getElementById("btn-close-username");
+
+  username.addEventListener("click", function () {
+    lb_username.classList.toggle("d-none");
+    btn_username.classList.toggle("d-none");
+  });
+
+  btn_username.addEventListener("click", function () {
+    lb_username.classList.toggle("d-none");
+    username.classList.toggle("d-none");
+    btn_username.classList.toggle("d-none");
+    form_username.classList.toggle("d-none");
+    btn_close_username.classList.toggle("d-none");
+  });
+
+  btn_close_username.addEventListener("click", function () {
+    lb_username.classList.toggle("d-none");
+    username.classList.toggle("d-none");
+    btn_username.classList.toggle("d-none");
+    form_username.classList.toggle("d-none");
+    btn_close_username.classList.toggle("d-none");
+  });
+}
+
 function ganti_nama() {
   const lb_nama = document.getElementById("lb-nama");
   const nama = document.getElementById("nama");
@@ -154,6 +183,7 @@ function ganti_password() {
   });
 }
 
+ganti_username();
 ganti_nama();
 ganti_email();
 ganti_link();

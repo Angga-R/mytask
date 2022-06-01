@@ -81,7 +81,8 @@
                                 <img class="img-profile rounded-circle"
                                     src="<?= base_url(); ?>/img/admin/<?= $data_admin['foto']; ?>"
                                     style="max-width: 60px">
-                                <span class="ml-2 d-none d-lg-inline text-white small"><?= $data_admin['nama']; ?>
+                                <span
+                                    class="ml-2 d-none d-lg-inline text-white small"><?= substr($data_admin['nama'], 0, 7); ?>
                                     | Admin</span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"

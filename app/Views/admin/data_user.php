@@ -33,6 +33,7 @@
                                 <th>Jenis Kelamin</th>
                                 <th>Daftar Pada</th>
                                 <th>Jumlah Task Dibuat</th>
+                                <th>Jumlah Catatan Dibuat</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -43,6 +44,7 @@
                                 <th>Jenis Kelamin</th>
                                 <th>Daftar Pada</th>
                                 <th>Jumlah Task Dibuat</th>
+                                <th>Jumlah Catatan Dibuat</th>
                                 <th>Aksi</th>
                             </tr>
                         </tfoot>
@@ -56,7 +58,8 @@
                                 <td><?= $user['name']; ?></td>
                                 <td><?= $user['gender']; ?></td>
                                 <td><?= $user['created_at']; ?></td>
-                                <td><?= $user['jml_task'] ?></td>
+                                <td><?= count($task->where('user', $user['username'])->findAll()); ?></td>
+                                <td><?= count($catatan->where('user', $user['username'])->findAll()); ?></td>
                                 <td>
                                     <form action="/hapus_user/<?= $user['id']; ?>" method="post" class="d-inline">
                                         <?= csrf_field(); ?>

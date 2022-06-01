@@ -64,6 +64,7 @@
   /* user */
   #nav-top-user {
     display: flex;
+    background-color: rgb(86, 86, 233);
   }
 
   #logo-mytask-bot {

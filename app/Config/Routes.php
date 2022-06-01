@@ -63,6 +63,11 @@ $routes->post('/ganti_gender', 'User\Profil::ganti_gender');
 $routes->post('/ganti_pertanyaan_keamanan', 'User\Profil::ganti_pertanyaan_keamanan');
 $routes->post('/ganti_jawaban_keamanan', 'User\Profil::ganti_jawaban_keamanan');
 $routes->post('/ganti_password_user', 'User\Profil::ganti_password');
+// catatan
+$routes->get('/catatan', 'User\Catatan::index');
+$routes->post('/catatan/buat_catatan', 'User\Catatan::add');
+$routes->delete('/catatan/hapus/(:num)', 'User\Catatan::hapus/$1');
+
 
 
 // ----- ADMIN -----
@@ -82,6 +87,7 @@ $routes->post('/rencana_gagal/(:num)', 'Admin\RencanaPengembangan::rencana_gagal
 // data admin
 $routes->get('/data_admin', 'Admin\Data_Admin::index');
 $routes->post('/ganti_foto_admin', 'Admin\Data_Admin::ganti_foto');
+$routes->post('/ganti_username_admin', 'Admin\Data_Admin::ganti_username');
 $routes->post('/ganti_nama_admin', 'Admin\Data_Admin::ganti_nama');
 $routes->post('/ganti_email_admin', 'Admin\Data_Admin::ganti_email');
 $routes->post('/ganti_link_admin', 'Admin\Data_Admin::ganti_link');
