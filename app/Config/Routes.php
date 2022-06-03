@@ -67,6 +67,15 @@ $routes->post('/ganti_password_user', 'User\Profil::ganti_password');
 $routes->get('/catatan', 'User\Catatan::index');
 $routes->post('/catatan/buat_catatan', 'User\Catatan::add');
 $routes->delete('/catatan/hapus/(:num)', 'User\Catatan::hapus/$1');
+// task
+$routes->get('/semua_task', 'User\Task::index');
+$routes->get('/buat_task', 'User\Task::buat_task');
+$routes->get('/task_saat_ini', 'User\Task::berjalan');
+$routes->get('/riwayat_task', 'User\Task::riwayat');
+$routes->post('/task/buat_task', 'User\Task::new');
+$routes->post('/task/task_selesai/(:num)', 'User\Task::selesai/$1');
+$routes->post('/task/task_gagal/(:num)', 'User\Task::gagal/$1');
+$routes->delete('/task/hapus/(:num)', 'User\Task::hapus/$1');
 
 
 

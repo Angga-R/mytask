@@ -79,6 +79,10 @@
     display: none;
   }
 
+  #task-plus {
+    display: block;
+  }
+
   .footer {
     position: static;
   }

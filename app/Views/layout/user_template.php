@@ -48,7 +48,8 @@
                                 <?php foreach($message as $m) : ?>
                                 <a class="dropdown-item d-flex align-items-center" href="/lihat_pesan/<?= $m['id'] ?>">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/user/<?= $user['foto']; ?>"
+                                        <img class="rounded-circle"
+                                            src="<?= base_url(); ?>/img/user/<?= $user['foto']; ?>"
                                             style="max-width: 60px" alt="">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
@@ -75,18 +76,19 @@
                                 <h6 class="dropdown-header">
                                     Task
                                 </h6>
-                                <a class="dropdown-item text-center small" href="/task/buat_task">
+                                <a class="dropdown-item text-center small" href="/buat_task">
                                     + Buat Task Baru</a>
-                                <a class="dropdown-item align-items-center" href="/task/saat_ini">
+                                <a class="dropdown-item align-items-center" href="/task_saat_ini">
                                     <i class="fas fa-clock text-warning"></i> Task Saat Ini
                                     <span class="bg-warning text-white px-1 ml-2"><?= count($task_berjalan); ?></span>
                                 </a>
-                                <a class="dropdown-item align-items-center" href="/task/riwayat">
+                                <a class="dropdown-item align-items-center" href="/riwayat_task">
                                     <i class="fas fa-history text-success"></i> Riwayat Task
                                     <span
                                         class="bg-success text-white px-1 ml-2"><?= $riwayat = count($task_selesai) + count($task_gagal); ?></span>
                                 </a>
-                                <a class="dropdown-item text-center small text-gray-500" href="/task/all">Lihat Semua
+                                <a class="dropdown-item text-center small text-gray-500" href="/semua_task">Lihat
+                                    Semua
                                     Task</a>
                             </div>
                         </li>
@@ -139,6 +141,19 @@
     <script src="<?= base_url(); ?>/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="<?= base_url(); ?>/vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="<?= base_url(); ?>/js/ruang-admin.min.js"></script>
+
+    <?php if(isset($datatable)) { ?>
+    <!-- Page level plugins -->
+    <script src="<?= base_url(); ?>/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="<?= base_url(); ?>/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script>
+    $(document).ready(function() {
+        $('#dataTableHover').DataTable(); // ID From dataTable with Hover
+    });
+    </script>
+    <?php } ?>
 
 </body>
 
