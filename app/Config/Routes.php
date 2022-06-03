@@ -76,6 +76,11 @@ $routes->post('/task/buat_task', 'User\Task::new');
 $routes->post('/task/task_selesai/(:num)', 'User\Task::selesai/$1');
 $routes->post('/task/task_gagal/(:num)', 'User\Task::gagal/$1');
 $routes->delete('/task/hapus/(:num)', 'User\Task::hapus/$1');
+// message
+$routes->get('/pesan_admin', 'User\Pesan::index');
+$routes->get('/kirim_pesan', 'User\Pesan::kirim_pesan');
+$routes->get('/lihat_pesan/(:num)', 'User\Pesan::lihat_pesan/$1');
+$routes->post('/pesan/kirim', 'User\Pesan::kirim');
 
 
 

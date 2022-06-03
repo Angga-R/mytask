@@ -34,7 +34,6 @@ class Task extends BaseController {
             'validation' => \Config\Services::validation(),
             'task' => $this->task->where('user', $user['username'])->findAll(),
             'task_berjalan' => $this->task->where(['user' => $user['username'], 'status' => 'on-going'])->orderBy('start', 'DESC')->findAll(),
-            'task_end' => $this->task->where(['user' => $user['username'], 'status' => 'selesai'])->orWhere('status', 'gagal')->orderBy('end', 'DESC')->findAll(),
             'task_selesai' => $this->task->where(['user' => $user['username'], 'status' => 'selesai'])->findAll(),
             'task_gagal' => $this->task->where(['user' => $user['username'], 'status' => 'gagal'])->findAll(),
             'all_message' =>  $this->message->where('pengirim', $user['username'])->findAll(),
@@ -42,7 +41,7 @@ class Task extends BaseController {
             'datatable' => true
         ];
 
-        return view('user/semua_task', $data);
+        return view('user/task/semua_task', $data);
 
     }
 
@@ -67,7 +66,7 @@ class Task extends BaseController {
             'message' => $this->message->where(['pengirim' => $user['username'], 'dibaca' => 'false'])->findAll(),
         ];
 
-        return view('user/buat_task', $data);
+        return view('user/task/buat_task', $data);
 
     }
 
@@ -91,7 +90,7 @@ class Task extends BaseController {
             'message' => $this->message->where(['pengirim' => $user['username'], 'dibaca' => 'false'])->findAll(),
         ];
 
-        return view('user/task_saat_ini', $data);
+        return view('user/task/task_saat_ini', $data);
 
     }
 
@@ -115,7 +114,7 @@ class Task extends BaseController {
             'datatable' => true
         ];
 
-        return view('user/riwayat_task', $data);
+        return view('user/task/riwayat_task', $data);
 
     }
 

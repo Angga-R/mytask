@@ -96,10 +96,17 @@ class Register extends BaseController
             return redirect()->back()->withInput();
         }
 
+        if($this->request->getVar('gender') == 'Laki-laki') {
+            $foto = 'boy.png';
+        }else{
+            $foto = 'girl.png';
+        }
+
         $this->user->save([
             'username' => $username,
             'name' => $this->request->getVar('name'),
             'gender' => $this->request->getVar('gender'),
+            'foto' => $foto,
             'password' => $password,
             'pertanyaan_keamanan' => $this->request->getVar('pertanyaan_keamanan'),
             'jawaban_keamanan' => md5($this->request->getVar('jawaban_keamanan'))

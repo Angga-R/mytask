@@ -59,7 +59,7 @@
                                     </div>
                                 </a>
                                 <?php endforeach; ?>
-                                <?php if(count($message) > 0) : ?>
+                                <?php if(count($all_message) > 0) : ?>
                                 <a class="dropdown-item text-center small text-gray-500" href="/pesan_admin ">Lihat
                                     Semua Pesan</a>
                                 <?php endif; ?>
@@ -101,8 +101,8 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img class="img-profile rounded-circle" src="img/user/<?= $user['foto']; ?>"
-                                    style="max-width: 60px">
+                                <img class="img-profile rounded-circle"
+                                    src="<?= base_url(); ?>/img/user/<?= $user['foto']; ?>" style="max-width: 60px">
                                 <span
                                     class="ml-2 d-lg-inline text-white small"><?= substr($user['name'], 0, 7); ?></span>
                             </a>

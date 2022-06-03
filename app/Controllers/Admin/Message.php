@@ -27,7 +27,7 @@ class Message extends BaseController {
             'title' => 'Pesan Admin',
             'data_admin' => $this->admin->where('id', session()->get('id_admin'))->first(),
             'validation' => \Config\Services::validation(),
-            'adminMessage' => $this->message->orderBy('nama_user', 'asc')->findAll()
+            'adminMessage' => $this->message->orderBy('created_at', 'desc')->findAll()
         ];
 
         return view('admin/admin_message', $data);
@@ -47,9 +47,10 @@ class Message extends BaseController {
             return redirect()->back()->withInput();
         }
 
-        $this->adminMessage->save([
+        $this->message->save([
             'id' => $id,
-            'balasan' => $this->request->getVar('balasan')
+            'balasan' => $this->request->getVar('balasan'),
+            'dibaca' => 'false'
         ]);
 
         return redirect()->to('/admin_message');
